@@ -36,7 +36,8 @@ class App extends Component {
 
   render() {
 		const { counter, todo } = this.props.store.getState();
-		console.log('<><>', counter, todo);
+		const { normal, delTodo } = todo;
+		console.log('<><>', delTodo, normal);
     return (
          <div className={style.main}>
 					<div className={style.operation}>
@@ -45,7 +46,7 @@ class App extends Component {
 					</div>
 					<div className={style.view}>
 						<Count value={counter} />
-						<TodoView todolist={todo} onChangeStatus={this.changeStatuHandle} onDelete={this.deleteHandle} />
+						<TodoView todolist={normal} onChangeStatus={this.changeStatuHandle} onDelete={this.deleteHandle} />
 					</div>
          </div>
     );
