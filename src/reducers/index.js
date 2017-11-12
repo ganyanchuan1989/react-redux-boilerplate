@@ -1,14 +1,9 @@
-export default (state = 1, action) => {
+import { combineReducers } from 'redux';
 
-    switch (action.type) {
-        case 'ADD':
-            return state += 1;
-            break;
-        case 'SUB':
-            return state -= 1;
-            break;
-        default:
-            return state;
-            break;
-    }
-};
+import counter from './counter';
+import todo from './todo';
+
+export default combineReducers({
+    counter,
+    todo,
+});

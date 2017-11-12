@@ -35,13 +35,18 @@ const config = {
       {
         test: /\.css$/i,
         use: extractLESS.extract({
-          use: [{
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              localIdentName: '[name]__[local]--[hash:base64:5]',
-            },
-          }],
+					fallback: 'style-loader',
+					// publicPath: '/dist',
+          use: [
+									{
+										loader: 'css-loader',
+										options: {
+											modules: true,
+											sourceMap: true,
+											localIdentName: '[name]__[local]--[hash:base64:5]',
+										},
+									},
+							],
         }),
       },
       { test: /\.(eot|woff|woff2|svg|ttf|png|jpg|jpeg)$/,

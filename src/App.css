@@ -1,5 +1,24 @@
-*{margin: 0;padding: 0}
+*{ margin: 0; padding: 0; box-sizing: border-box}
+.app{
+    width: 100%;
+    height: 100%;
+    background: yello;
+}
 .main{
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
+}
+.operation{
+    /* height: 30%; */
+    display: flex;
+    flex-direction: row;
+    background: #E5FAC9;
+}
+.view{
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+    background: #eee;
 }

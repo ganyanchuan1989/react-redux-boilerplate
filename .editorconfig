@@ -16,6 +16,6 @@ charset = utf-8
 # Tab indentation (no size specified)
 [*.{js,jsx}]
 indent_style = tab
-tab_width = 4
+tab_width = 2
 
 

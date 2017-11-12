@@ -52,6 +52,10 @@
         "indent": "off",
         "default-case": "off",
         "no-tabs": "off",
-        "react/jsx-indent-props": "off"
+        "react/jsx-indent-props": "off",
+        "prefer-destructuring": "off",
+        "react/forbid-prop-types": "off",
+        "react/no-array-index-key":"off",
+        "no-plusplus":"off"
     }
 }

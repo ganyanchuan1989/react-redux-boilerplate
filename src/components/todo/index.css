@@ -1,0 +1,79 @@
+.todo{
+    display: flex;
+    height: 50px;
+    line-height: 50px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 2px;
+    background: #ccc;
+}
+.complete{
+    background: #31E564;
+}
+
+.todo:hover{
+    background: #F8931F;
+}
+
+.view_main{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* padding: 0 50px; */
+}
+.view_main ul{
+    list-style: none;
+    flex: 1;
+    overflow: auto;
+}
+
+.view_main ul li span{
+    flex: 1;
+}
+
+.delIcon{
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    /* -webkit-mask-image: url(../../assets/delete.svg);
+    -webkit-filter: drop-shadow(rgb(0, 204, 153) 80px 0px);
+    filter: drop-shadow(rgb(0, 204, 153) 80px 0px); */
+    -webkit-mask: url(../../assets/delete.svg) no-repeat 50% 50%;
+    mask: url(../../assets/delete.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+}
+.delIcon:hover{
+    opacity: 0.3;
+}
+
+.add_main{
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add_main input{
+    width: 300px;
+    height: 35px;
+    border:1px solid #ccc;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    outline: none;
+    padding: 3px 10px;
+}
+
+.add_main input:hover{
+    border:1px solid #09B3CD;
+}
+
+.add_main button{
+    height: 35px;
+    width: 50px;
+    border: 1px solid #ccc;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    outline: none;
+}
