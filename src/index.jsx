@@ -1,15 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-
+import { Provider } from 'react-redux';
 import App from './App';
 import store from './store';
 
 const render = (Component) => {
   ReactDOM.render(
-    <AppContainer>
-      <Component store={store} />
-    </AppContainer>,
+		<Provider store={store} >
+			<AppContainer>
+					<Component />
+			</AppContainer>
+		</Provider>,
     document.getElementById('app'),
   );
 };
@@ -21,6 +23,6 @@ if (module.hot) {
   module.hot.accept('./App', () => { render(App); });
 }
 
-store.subscribe(() => {
-	render(App);
-});
+// store.subscribe(() => {
+// 	render(App);
+// });

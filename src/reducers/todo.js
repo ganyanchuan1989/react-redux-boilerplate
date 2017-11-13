@@ -14,14 +14,15 @@ export default (state = [], action) => {
             return state.map(todo =>
 								((todo.id === action.id) ? { ...todo, completed: !todo.completed } : todo));
 				case 'DEL_TODO':
-							for (let i = 0; i < state.length; i++) {
-								const todo = state[i];
-								if (todo.id === action.id) {
-									state.splice(i, 1);
-									break;
-								}
+						let nextState = state.slice(0);
+						for (let i = 0; i < nextState.length; i++) {
+							const todo = nextState[i];
+							if (todo.id === action.id) {
+								nextState.splice(i, 1);
+								break;
 							}
-							return state;
+						}
+							return nextState;
         default:
             return state;
     }

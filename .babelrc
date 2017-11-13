@@ -3,9 +3,10 @@
         "react",
         "stage-2", ["es2015", { "modules": false }]
     ],
-    "plugins": [
+    "plugins": [        
         "react-hot-loader/babel",
         "syntax-dynamic-import",
-        "transform-class-properties"
+        "transform-class-properties",
+        ["react-css-modules",{"webpackHotModuleReloading":true}]
     ]
 }
