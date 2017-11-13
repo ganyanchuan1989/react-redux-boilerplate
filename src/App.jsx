@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import style from './App.css';
@@ -11,11 +10,14 @@ import { addTodo, toggleTodo, delTodo } from './actions/todo';
 class App extends Component {
   render() {
 		// dispatch,
-		 const { todolist, onAdd, onDelete, onChangeStatus } = this.props;
+		const { todolist, onAdd, onDelete, onChangeStatus } = this.props;
     return (
          <div className={style.main}>
 					<TodoAdd onAdd={(text) => { onAdd(text); }} />
-					<TodoView todolist={todolist} onChangeStatus={todo => onChangeStatus(todo)} onDelete={todo => onDelete(todo)} />
+					<TodoView todolist={todolist}
+							onChangeStatus={todo => onChangeStatus(todo)}
+							onDelete={todo => onDelete(todo)}
+					/>
          </div>
     );
   }
