@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import style from './App.css';
+import './App.css';
 import TodoView from './components/todo';
 import TodoAdd from './components/todo/add';
 import { addTodo, toggleTodo, delTodo } from './actions/todo';
@@ -12,7 +12,7 @@ class App extends Component {
 		// dispatch,
 		const { todolist, onAdd, onDelete, onChangeStatus } = this.props;
     return (
-         <div className={style.main}>
+         <div className="main">
 					<TodoAdd onAdd={(text) => { onAdd(text); }} />
 					<TodoView todolist={todolist}
 							onChangeStatus={todo => onChangeStatus(todo)}
