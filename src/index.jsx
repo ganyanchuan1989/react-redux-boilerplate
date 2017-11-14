@@ -2,16 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
+
+
 import App from './App';
-import store from './store';
+import store from './redux/store';
 
 const render = (Component) => {
   ReactDOM.render(
-		<Provider store={store} >
-			<AppContainer>
-					<Component />
-			</AppContainer>
-		</Provider>,
+		<AppContainer>
+			<Provider store={store} >
+						<Component/>
+			</Provider>
+		</AppContainer>,
     document.getElementById('app'),
   );
 };

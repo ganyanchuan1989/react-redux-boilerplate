@@ -7,7 +7,6 @@ const app = express();
 const config = require('./webpack.config.dev.js');
 
 const compiler = webpack(config);
-
 app.use(webpackDevMiddleware(compiler, {
   publicPath: '/',
   stats: {

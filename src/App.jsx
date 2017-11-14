@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import './App.css';
 import TodoView from './components/todo';
 import TodoAdd from './components/todo/add';
-import { addTodo, toggleTodo, delTodo } from './actions/todo';
+import { addTodo, toggleTodo, delTodo } from './redux/actions/todo';
 
 
 class App extends Component {
@@ -12,7 +12,7 @@ class App extends Component {
 		// dispatch,
 		const { todolist, onAdd, onDelete, onChangeStatus } = this.props;
     return (
-         <div className="main">
+         <div styleName="main">
 					<TodoAdd onAdd={(text) => { onAdd(text); }} />
 					<TodoView todolist={todolist}
 							onChangeStatus={todo => onChangeStatus(todo)}
@@ -27,6 +27,7 @@ const mapStateToProps = (state) => {
 	console.log('mapStateToPrpop1s', state);
 	return { todolist: state.todo };
 };
+
 
 const mapDispatchToProps = dispatch => ({
 		onAdd: (text) => {

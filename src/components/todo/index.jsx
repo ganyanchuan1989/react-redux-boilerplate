@@ -11,14 +11,14 @@ class ToDoView extends Component {
 			const classname = classnames('todo', { complete: todo.completed });
 			console.log('render', todo.completed, classname);
 			return (
-				<li key={`${index}_`} className={classname} onDoubleClick={() => { onChangeStatus(todo); }} data-index={index}>
+				<li key={`${index}_`} styleName={classname} onDoubleClick={() => { onChangeStatus(todo); }} data-index={index}>
 					<span>{todo.text}</span>
-					<button className="delIcon" onClick={() => { onDelete(todo); }} />
+					<button styleName="delIcon" onClick={() => { onDelete(todo); }} />
 				</li>
 			);
 		});
 		return (
-			<div className="view_main">
+			<div styleName="view_main">
 				<h1>TODO List</h1>
 				<ul>{nodes}</ul>
 			</div>

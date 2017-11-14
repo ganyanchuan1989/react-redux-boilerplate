@@ -10,6 +10,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const extractCSS = new ExtractTextPlugin('[name]-[contenthash:8].css');
 
+
 const config = {
     entry: {
         vendor: ['react', 'react-dom'],
@@ -73,7 +74,8 @@ const config = {
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: JSON.stringify('production'),
-            },
+						},
+						__DEV__ :false
         }),
         // 抽离出公共模块到独立的js
         new webpack.optimize.CommonsChunkPlugin({

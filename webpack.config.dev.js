@@ -2,9 +2,10 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
+const NyanProgressPlugin = require('nyan-progress-webpack-plugin');
 const extractLESS = new ExtractTextPlugin('[name].css');
 
+const env = process.env.NODE_ENV;
 
 const config = {
   entry: [
@@ -12,7 +13,6 @@ const config = {
     'react-hot-loader/patch',
     'webpack/hot/only-dev-server',
     './src/index.jsx',
-
   ],
   devtool: 'eval-source-map',
   devServer: {
@@ -67,9 +67,10 @@ const config = {
   },
 
   plugins: [
-    // new webpack.DefinePlugin({
-    //   'process.env.NODE_ENV': JSON.stringify('development'),
-    // }),
+		new NyanProgressPlugin(),
+    new webpack.DefinePlugin({
+			 __DEV__: true,
+    }),
     // new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
