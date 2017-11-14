@@ -41,7 +41,7 @@ const config = {
 									{
 										loader: 'css-loader',
 										options: {
-											// modules: true,
+											modules: true,
 											sourceMap: true,
 											localIdentName: '[name]__[local]--[hash:base64:5]',
 										},

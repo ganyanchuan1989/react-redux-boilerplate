@@ -7,6 +7,11 @@
         "react-hot-loader/babel",
         "syntax-dynamic-import",
         "transform-class-properties",
-        ["react-css-modules",{"webpackHotModuleReloading":true}]
+        ["react-css-modules",
+            {
+                "webpackHotModuleReloading":true,
+                "generateScopedName":"[name]__[local]--[hash:base64:5]"
+            }
+        ]
     ]
 }
