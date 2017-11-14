@@ -12,7 +12,7 @@ class App extends Component {
 		// dispatch,
 		const { todolist, onAdd, onDelete, onChangeStatus } = this.props;
     return (
-         <div className="main">
+         <div styleName="main">
 					<TodoAdd onAdd={(text) => { onAdd(text); }} />
 					<TodoView todolist={todolist}
 							onChangeStatus={todo => onChangeStatus(todo)}

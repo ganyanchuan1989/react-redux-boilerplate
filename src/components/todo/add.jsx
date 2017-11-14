@@ -16,7 +16,7 @@ class Add extends Component {
 	}
 	render() {
 		return (
-			<div className="add_main">
+			<div styleName="add_main">
 				<input type="text" value={this.state.value} onChange={this.textChangeHandle} />
 				<button onClick={this.addHandle}>ADD</button>
 			</div>
