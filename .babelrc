@@ -12,6 +12,7 @@
                 "webpackHotModuleReloading":true,
                 "generateScopedName":"[name]__[local]--[hash:base64:5]"
             }
-        ]
+        ],
+        "transform-runtime"
     ]
 }

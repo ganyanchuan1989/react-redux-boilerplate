@@ -34,20 +34,17 @@ const config = {
       { test: /\.(js|jsx)$/, use: 'babel-loader', exclude: /node_modules/ },
       {
         test: /\.css$/i,
-        use: extractLESS.extract({
-					fallback: 'style-loader',
-					// publicPath: '/dist',
-          use: [
-									{
-										loader: 'css-loader',
-										options: {
-											modules: true,
-											sourceMap: true,
-											localIdentName: '[name]__[local]--[hash:base64:5]',
-										},
-									},
-							],
-        }),
+        use: [
+					'style-loader',
+					{
+						loader: 'css-loader',
+						options: {
+							modules: true,
+							sourceMap: true,
+							localIdentName: '[name]__[local]--[hash:base64:5]',
+						},
+					},
+				],
       },
       { test: /\.(eot|woff|woff2|svg|ttf|png|jpg|jpeg)$/,
         use: [
