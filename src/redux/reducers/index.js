@@ -7,4 +7,4 @@ import counter from './counter';
 		
 // });
 
-export default {todo,	counter,injectAsyncReducer}
+export default {todo,	counter}

@@ -14,9 +14,10 @@ import Bundle from './Bundle';
 import App from './App';
 import store, { history } from './redux/store';
 
-import asyncComponent from './asyncComponent';
+import { asyncComponent } from 'MYUTILS';
 const AsyncCounter = asyncComponent(() => import('./components/counter/index'/* webpackChunkName:${type} */));
 
+console.log("history",history);
 
 const render = (Component) => {
   ReactDOM.render(
@@ -25,8 +26,8 @@ const render = (Component) => {
 				<Router history={history}>
 						<div>
 							<Route path="/" component={Component}/>
-							<Link to="/c">Counter</Link>
-							<Route path="/c" component={AsyncCounter}/>
+							<Link to="/d">Counter</Link>
+							<Route path="/d" component={AsyncCounter}/>
 						</div>
 				</Router>
 			</Provider>

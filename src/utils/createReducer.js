@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux';
-import asyncComponentFactory from './asyncComponentFactory';
 
 let reducersList = {};
 
@@ -17,6 +16,5 @@ function injectAsyncReducer(name, asyncReducer) {
 }
 
 
-const asyncComponent =  asyncComponentFactory(injectAsyncReducer);
 
-export default { asyncComponent };
+export { injectAsyncReducer };
