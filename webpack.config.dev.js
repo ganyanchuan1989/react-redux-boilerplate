@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const NyanProgressPlugin = require('nyan-progress-webpack-plugin');
 const extractLESS = new ExtractTextPlugin('[name].css');
+const WebpackCmCfg = require('./webpack.config.cm');
 
 const env = process.env.NODE_ENV;
 
@@ -81,4 +82,4 @@ const config = {
   ],
 };
 
-module.exports = config;
+module.exports = Object.assign(WebpackCmCfg,config);

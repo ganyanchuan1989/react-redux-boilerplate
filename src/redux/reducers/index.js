@@ -2,7 +2,9 @@
 
 import todo from './todo';
 import counter from './counter';
-export default {todo,	counter}
+
 // export default combineReducers({
 		
 // });
+
+export default {todo,	counter,injectAsyncReducer}

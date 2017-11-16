@@ -7,6 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const WebpackCmCfg = require('./webpack.config.cm');
 
 const extractCSS = new ExtractTextPlugin('[name]-[contenthash:8].css');
 
@@ -111,4 +112,4 @@ const config = {
 
 };
 
-module.exports = config;
+module.exports = Object.assign(WebpackCmCfg,config);

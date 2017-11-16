@@ -10,7 +10,6 @@ import { addTodo, toggleTodo, delTodo } from './redux/actions/todo';
 class App extends Component {
   render() {
 		// dispatch,
-		console.log('diadfadafdafdafda',this.props);
 		const { todolist, onAdd, onDelete, onChangeStatus } = this.props;
     return (
          <div styleName="main">
