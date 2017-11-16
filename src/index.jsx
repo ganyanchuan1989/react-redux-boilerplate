@@ -8,16 +8,12 @@ import {
 	Link,
 	Switch,
 } from 'react-router-dom';
-import { browserHistory } from 'react-router'
 
-import Bundle from './Bundle';
 import App from './App';
 import store, { history } from './redux/store';
 
-import { asyncComponent } from 'MYUTILS';
-const AsyncCounter = asyncComponent(() => import('./components/counter/index'/* webpackChunkName:${type} */));
+import { AsyncCounter } from './routers/asyncImport';
 
-console.log("history",history);
 
 const render = (Component) => {
   ReactDOM.render(

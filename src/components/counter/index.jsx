@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import {increment,decrement} from '../../redux/actions/counter';
+import {increment,decrement} from 'ACTIONS/counter';
 import './index.css';
 class Counter extends Component {
 	render() {
@@ -30,7 +30,7 @@ Counter.propTypes = {
 
 const mapStateToProps=(state)=>{
 	return {
-		value:state.counter
+		value:state.Counter
 	};
 }
 const mapDispatchToProps=(dispatch)=>{

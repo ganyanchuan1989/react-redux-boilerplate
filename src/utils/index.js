@@ -1,6 +1,5 @@
-import { injectAsyncReducer } from './createReducer';
+import { injectAsyncReducer } from 'REDUCERS';
 import asyncComponentFactory from './asyncComponentFactory';
-
 
 const asyncComponent = asyncComponentFactory(injectAsyncReducer);
 

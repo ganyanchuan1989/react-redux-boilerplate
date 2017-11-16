@@ -24,7 +24,6 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
-	console.log('mapStateToPrpop1s', state);
 	return { todolist: state.todo };
 };
 
@@ -37,7 +36,6 @@ const mapDispatchToProps = dispatch => ({
 			dispatch(toggleTodo(todo));
 		},
 		onDelete: (todo) => {
-			console.log('delete', todo);
 			dispatch(delTodo(todo));
 		},
 	});

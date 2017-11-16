@@ -27,9 +27,6 @@ const config = {
     chunkFilename: '[name].bundle.js',
     // sourceMapFilename: '[name].js.map',
   },
-  resolve: {
-    extensions: ['.js', '.jsx'],
-  },
   module: {
     rules: [
       { test: /\.(js|jsx)$/, use: 'babel-loader', exclude: /node_modules/ },

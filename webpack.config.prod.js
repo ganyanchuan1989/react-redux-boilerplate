@@ -31,9 +31,6 @@ const config = {
         // sourceMapFilename: '[name]-[chunkhash:8].bundle.map',
         // devtoolModuleFilenameTemplate: "webpack:///[resource-path]?[loaders]"
     },
-    resolve: {
-        extensions: ['.js', '.jsx'],
-    },
     module: {
         rules: [
             { test: /\.(js|jsx)$/, use: 'babel-loader', exclude: /node_modules/ },
