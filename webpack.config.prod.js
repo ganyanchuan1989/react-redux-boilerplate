@@ -55,11 +55,11 @@ const config = {
                 use: [{
                     loader: 'url-loader',
                     options: {
-                        limit: 10, // 20K
+                        limit: 2048, // 20K
                         fallback: 'file-loader', // default
                         name: '[name]-[hash:8].[ext]',
                         // publicPath: 'assets/',
-                        outputPath: './images/',
+                        outputPath: './imgs/',
                         useRelativePath: false, // true : outputPath 失效
                     },
                 }],
