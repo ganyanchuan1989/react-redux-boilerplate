@@ -2,14 +2,13 @@
 .app{
     width: 100%;
     height: 100%;
-    background: yello;
 }
 .main{
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    background: #ccc;
+    background: #eee;
 }
 .operation{
     /* height: 30%; */

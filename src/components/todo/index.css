@@ -22,6 +22,9 @@
     flex-direction: column;
     /* padding: 0 50px; */
 }
+.view_main h1{
+    text-align: center;
+}
 .view_main ul{
     list-style: none;
     flex: 1;
