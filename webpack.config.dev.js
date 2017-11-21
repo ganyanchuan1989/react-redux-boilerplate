@@ -54,7 +54,7 @@ const config = {
           {
             loader: 'url-loader',
             options: {
-              limit: 20, // 20K
+              limit: 20000, // 20K
               fallback: 'file-loader', // default
               name: '[path][name]-[hash:8].[ext]',
               // publicPath: 'assets/',
