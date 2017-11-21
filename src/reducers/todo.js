@@ -10,7 +10,6 @@ export default (state = [], action) => {
                 },
             ];
 				case 'TOGGLE_TODO':
-						console.log('<>>>>>>>>>>', state, action);
             return state.map(todo =>
 								((todo.id === action.id) ? { ...todo, completed: !todo.completed } : todo));
 				case 'DEL_TODO':

@@ -9,7 +9,6 @@ class ToDoView extends Component {
 		const { onChangeStatus, onDelete } = this.props;
 		const nodes = this.props.todolist.map((todo, index) => {
 			const classname = classnames('todo', { complete: todo.completed });
-			console.log('render', todo.completed, classname);
 			return (
 				<li key={`${index}_`} styleName={classname} onDoubleClick={() => { onChangeStatus(todo); }} data-index={index}>
 					<span>{todo.text}</span>
