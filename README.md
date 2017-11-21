@@ -63,6 +63,25 @@ dist根目录下就是静态资源。
  npm run build
  ```
 
+# 分支
+项目中提供了很多分支，让初学者有个循序渐进的学习过程。
 
- # 待完善
-  `react-router-redux 2.x`的版本不支持`react-router 4`。如果`react-router 4`的环境想用`react-router-redux`要等等咯。 目前针对`react-router 4`的`react-router-redux 5.0` 的版本已经合并到 `react-router` 统一维护，不过还没发布正式版本。
+- redux
+
+简单的redux TODO List的应用，让你更加深入的了解`redux`。详细的文档：[redux](https://github.com/ganxunzou/react-docs/blob/master/techstack/redux.md)
+
+- react-redux
+
+在`redux` 的基础上，增加`react-redux`集成。文档：[react-redux](https://github.com/ganxunzou/react-docs/blob/master/techstack/react-redux.md)
+
+- react-router-redux
+
+这个就是 `master` 了。不过一般我是在这个上开发，开发结束然后到 `master` 合并。功能测试通过后会同步到 `master` 
+
+- master
+
+完整的工程分支。可以在这个基础上开发自己的应用。
+
+
+# 待完善
+`react-router-redux 2.x`的版本不支持`react-router 4`。如果`react-router 4`的环境想用`react-router-redux`要等等咯。 目前针对`react-router 4`的`react-router-redux 5.0` 的版本已经合并到 `react-router` 统一维护，不过还没发布正式版本。
