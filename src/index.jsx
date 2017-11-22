@@ -9,22 +9,16 @@ import {
 	Switch,
 } from 'react-router-dom';
 
-import App from './App';
 import store, { history } from './redux/store';
-
-import { AsyncCounter } from './routers/asyncImport';
-
+import App from './App';
+import { Todo, AsyncCounter } from 'ROUTERS';
 
 const render = (Component) => {
   ReactDOM.render(
 		<AppContainer>
 			<Provider store={store} >
 				<Router history={history}>
-						<div>
-							<Route path="/" component={Component}/>
-							<Link to="/d">Counter</Link>
-							<Route path="/d" component={AsyncCounter}/>
-						</div>
+					<Route path="/" component={App}></Route>
 				</Router>
 			</Provider>
 		</AppContainer>,

@@ -4,6 +4,11 @@ import classnames from 'classnames';
 
 import './index.css';
 
+import { AsyncCounter } from 'ROUTERS';
+import {
+  Route,
+} from 'react-router-dom';
+
 class ToDoView extends Component {
 	render() {
 		const { onChangeStatus, onDelete } = this.props;
@@ -17,6 +22,7 @@ class ToDoView extends Component {
 				</li>
 			);
 		});
+		
 		return (
 			<div styleName="view_main">
 				<h1>TODO List</h1>

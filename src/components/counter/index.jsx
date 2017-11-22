@@ -24,7 +24,7 @@ class Counter extends Component {
 Counter.propTypes = {
 	onIncrement:PropTypes.func.isRequired,
 	onDecrement:PropTypes.func.isRequired,
-	value:PropTypes.string.isRequired,
+	value:PropTypes.number.isRequired,
 };
 
 
