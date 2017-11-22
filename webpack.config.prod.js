@@ -27,7 +27,7 @@ const config = {
         path: `${__dirname}/dist`,
         filename: '[name]-[chunkhash:8].bundle.js',
         publicPath: './',
-        chunkFilename: '[name]-[chunkhash:8].bundle.js',
+        chunkFilename: '[name].bundle.js',
         // sourceMapFilename: '[name]-[chunkhash:8].bundle.map',
         // devtoolModuleFilenameTemplate: "webpack:///[resource-path]?[loaders]"
     },
