@@ -15,7 +15,8 @@ app.use(webpackDevMiddleware(compiler, {
   hot: true,
 }));
 
-app.use(webpackHotMiddleware(compiler));
+// 模拟服务器，返回json格式的报文。
+app.use("/mock",express.static('mock'));
 
 
 app.listen(config.devServer.port, () => {
