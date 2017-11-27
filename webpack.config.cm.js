@@ -12,6 +12,9 @@ var config = {
 			REDUCERS: path.resolve("./src/redux/reducers"),
 			STORE: path.resolve("./src/redux/store"),
 			ACTIONS:path.resolve("./src/redux/actions"),
+			ROUTERS:path.resolve("./src/routers"),
+			VIEWS:path.resolve("./src/views"),
+			COMPONENTS:path.resolve("./src/components"),
     }
   },
 }

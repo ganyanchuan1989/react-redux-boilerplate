@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<script type="text/javascript" src="jquery-2.1.0.js">
+		
+	</script>
+   <script type="text/javascript">
+   	$(document).ready(function(){
+	  $("button").click(function(){
+	    $.ajax({
+	    	method:"GET",
+	    	url:"/mock/test/test.json",
+	    	contentType:"application/json",
+	    	success:function(data,status){
+				alert('请看控制台输出');
+	      		console.log(data);
+	    	}
+	    });
+	  });
+	});
+   </script>
+</head>
+
+<body >
+   HelloWorld
+   <button>getJSON</button>
+</body>
+
+</html>

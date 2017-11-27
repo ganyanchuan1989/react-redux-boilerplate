@@ -3,6 +3,7 @@ import store from 'STORE';
 
 import todo from './todo';
 
+
 const syncReducerList = {
   todo
 }
@@ -13,6 +14,7 @@ let asyncReducerList = {}
  * @return {Function} rootReducer
  */
 export function createRootReducer() {
+	console.log(">>>>>>>>createRootReducer");
   return combineReducers({
     ...syncReducerList,
     ...asyncReducerList
@@ -24,13 +26,13 @@ export function createRootReducer() {
  * 因为两个key一样会出现覆盖，覆盖后问题十分难以排查
  * @param {*}  
  */
-function createReducer(asyncReducers) {
-	if(asyncReducers)
+function createReducer(asyncReducer) {
+	if(asyncReducer)
 	{
-		if(asyncReducerList[Object.keys(asyncReducers)[0]])
-			throw new Error(`AsyncReduer KEY:${Object.keys(asyncReducers)} is Exist`);
-		else
-			asyncReducerList = Object.assign({}, asyncReducerList, asyncReducers)
+		// if(asyncReducerList[Object.keys(asyncReducers)[0]])
+		// 	throw new Error(`AsyncReduer KEY:${Object.keys(asyncReducers)} is Exist`);
+		// else
+			asyncReducerList = Object.assign({}, asyncReducerList, asyncReducer)
 	}
 	return createRootReducer();
 }
@@ -41,6 +43,8 @@ function createReducer(asyncReducers) {
  * @param {*} asyncReducer 
  */
 export function injectAsyncReducer(name, asyncReducer) {
-	store.replaceReducer(createReducer({ [name]: asyncReducer }));
+	var reducer = createReducer({ [name]: asyncReducer });
+	console.log(reducer);
+	store.replaceReducer(reducer);
 }
 

@@ -1,43 +1,28 @@
+import './App.css'
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-import './App.css';
-import TodoView from './components/todo';
-import TodoAdd from './components/todo/add';
-import { addTodo, toggleTodo, delTodo } from './redux/actions/todo';
+import { Route, Switch } from 'react-router-dom';
+import { Todo, AsyncCounter } from 'ROUTERS';
 
+class componentName extends Component {
+	render() {
+		return (
+			<div styleName="app">
+				HelloWorld
+				<div><Link to="/todo">TODO</Link></div>
+				<div><Link to="/couter">COUTER</Link></div>
 
-class App extends Component {
-  render() {
-		// dispatch,
-		const { todolist, onAdd, onDelete, onChangeStatus } = this.props;
-    return (
-         <div styleName="main">
-					<TodoAdd onAdd={(text) => { onAdd(text); }} />
-					<TodoView todolist={todolist}
-							onChangeStatus={todo => onChangeStatus(todo)}
-							onDelete={todo => onDelete(todo)}
-					/>
-         </div>
-    );
-  }
+				<Route path="/todo" component={Todo}/>
+				<Route path="/couter" component={AsyncCounter}/>
+			</div>
+		);
+	}
 }
 
-const mapStateToProps = (state) => {
-	return { todolist: state.todo };
+componentName.propTypes = {
+
 };
 
-
-const mapDispatchToProps = dispatch => ({
-		onAdd: (text) => {
-			dispatch(addTodo(text));
-		},
-		onChangeStatus: (todo) => {
-			dispatch(toggleTodo(todo));
-		},
-		onDelete: (todo) => {
-			dispatch(delTodo(todo));
-		},
-	});
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default componentName;
