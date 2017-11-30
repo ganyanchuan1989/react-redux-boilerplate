@@ -4,6 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const WebpackCmCfg = require('./webpack.config.cm');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const extractCSS = new ExtractTextPlugin('[name]-[contenthash:8].css');
 
@@ -98,7 +99,8 @@ const config = {
         new webpack.SourceMapDevToolPlugin({
             filename: '[file].map', // 请注意这里，不能写成[name].js.map,这种方式生成的map文件是个空文件
             exclude: ['vendor'],
-        }),
+				}),
+				new CopyWebpackPlugin([{ from: './static/' ,to:'./'}]),
     ],
 
 };

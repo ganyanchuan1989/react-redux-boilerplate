@@ -7,12 +7,15 @@ const WebpackCmCfg = require('./webpack.config.cm');
 const extractCSS = new ExtractTextPlugin('[name]-[contenthash:8].css');
 
 const config = {
-  entry: [
-    'webpack-hot-middleware/client?reload=true',
-    'react-hot-loader/patch',
-    'webpack/hot/only-dev-server',
-    './src/index.jsx',
-  ],
+	entry: {
+		vendor: ['react', 'react-dom'],
+		App: [
+			'webpack-hot-middleware/client?reload=true',
+			'react-hot-loader/patch',
+			'webpack/hot/only-dev-server',
+			'./src/index.jsx',
+		],
+	},
   devtool: 'eval-source-map',
   devServer: {
     contentBase: './dist',
@@ -20,7 +23,7 @@ const config = {
     port: 3000,
   },
   output: {
-    filename: '[name]-[chunkhash:8].bundle.js',
+    filename: '[name]-[hash:8].bundle.js',
 		path: `${__dirname}/dist`,
 		publicPath: './',
 		chunkFilename: '[name].bundle.js',
@@ -71,7 +74,7 @@ const config = {
       filename: 'index.html',
       template: './template/index_dev.html',
       title: 'react-boilerplate-dev',
-      // chunks: ['app'], //指定要加入的entry实例,
+      chunks: ['App', 'vendor'], // 指定要加入的entry实例,
       inject: 'body',
     }),
     extractCSS,
