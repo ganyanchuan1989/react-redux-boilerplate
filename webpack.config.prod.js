@@ -1,7 +1,3 @@
-/**
- * Created by KJ on 2016/3/10.
- */
-
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -10,7 +6,6 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const WebpackCmCfg = require('./webpack.config.cm');
 
 const extractCSS = new ExtractTextPlugin('[name]-[contenthash:8].css');
-
 
 const config = {
     entry: {
@@ -24,12 +19,11 @@ const config = {
     // },
     // devtool: 'source-map',
     output: {
+				filename: '[name]-[chunkhash:8].bundle.js',
         path: `${__dirname}/dist`,
-        filename: '[name]-[chunkhash:8].bundle.js',
         publicPath: './',
         chunkFilename: '[name].bundle.js',
         // sourceMapFilename: '[name]-[chunkhash:8].bundle.map',
-        // devtoolModuleFilenameTemplate: "webpack:///[resource-path]?[loaders]"
     },
     module: {
         rules: [

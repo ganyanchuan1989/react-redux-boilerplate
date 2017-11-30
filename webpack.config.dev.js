@@ -1,12 +1,10 @@
-const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const NyanProgressPlugin = require('nyan-progress-webpack-plugin');
-const extractLESS = new ExtractTextPlugin('[name].css');
 const WebpackCmCfg = require('./webpack.config.cm');
 
-const env = process.env.NODE_ENV;
+const extractCSS = new ExtractTextPlugin('[name]-[contenthash:8].css');
 
 const config = {
   entry: [
@@ -22,10 +20,11 @@ const config = {
     port: 3000,
   },
   output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    chunkFilename: '[name].bundle.js',
-    // sourceMapFilename: '[name].js.map',
+    filename: '[name]-[chunkhash:8].bundle.js',
+		path: `${__dirname}/dist`,
+		publicPath: './',
+		chunkFilename: '[name].bundle.js',
+    // sourceMapFilename: '[name]-[chunkhash:8].bundle.map',
   },
   module: {
     rules: [
@@ -49,9 +48,9 @@ const config = {
           {
             loader: 'url-loader',
             options: {
-              limit: 20, // 20K
+              limit: 2048, // 20K
               fallback: 'file-loader', // default
-              name: '[path][name]-[hash:8].[ext]',
+              name: '[name]-[hash:8].[ext]',
               // publicPath: 'assets/',
               outputPath: './imgs/',
               useRelativePath: false, // true : outputPath 失效
@@ -75,7 +74,7 @@ const config = {
       // chunks: ['app'], //指定要加入的entry实例,
       inject: 'body',
     }),
-    extractLESS,
+    extractCSS,
   ],
 };
 
