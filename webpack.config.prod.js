@@ -5,6 +5,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const WebpackCmCfg = require('./webpack.config.cm');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
 
 const extractCSS = new ExtractTextPlugin('[name]-[contenthash:8].css');
 
@@ -101,6 +102,10 @@ const config = {
             exclude: ['vendor'],
 				}),
 				new CopyWebpackPlugin([{ from: './static/' ,to:'./'}]),
+				new ManifestPlugin({
+					fileName: 'manifest.json',
+					//  basePath: '/dist/',
+				}),
     ],
 
 };
