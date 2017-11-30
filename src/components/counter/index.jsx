@@ -4,14 +4,15 @@ import { connect } from 'react-redux';
 
 import {increment,decrement} from 'ACTIONS/counter';
 import './index.css';
+import { Button  } from 'reactstrap';
 class Counter extends Component {
 	render() {
 		const {onIncrement,onDecrement,value} = this.props;
 		return (
 			<div>
 					<div>
-						<button styleName="btn" onClick={()=>{onIncrement()}}>+</button>
-						<button styleName="btn" onClick={()=>{onDecrement()}}>-</button>
+						<Button styleName="btn" onClick={()=>{onIncrement()}}>+</Button>
+						<Button styleName="btn" onClick={()=>{onDecrement()}}>-</Button>
 					</div>
 					<div>
 						value:{value}

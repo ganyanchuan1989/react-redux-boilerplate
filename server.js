@@ -22,6 +22,9 @@ app.use(webpackHotMiddleware(compiler));
 // 模拟服务器，返回json格式的报文。
 app.use("/mock",express.static('mock'));
 
+// 静态服务器
+app.use(express.static('static'));
+
 
 app.listen(config.devServer.port, () => {
   console.log('start app listening on port 3000!\n');

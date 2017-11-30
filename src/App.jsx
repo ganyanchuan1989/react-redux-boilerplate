@@ -5,15 +5,42 @@ import { Link } from 'react-router-dom';
 
 import { Route, Switch } from 'react-router-dom';
 import { Todo, AsyncCounter } from 'ROUTERS';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
-class componentName extends Component {
+class App extends Component {	
+	constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
+  }
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+	}
+	
 	render() {
 		return (
 			<div styleName="app">
-				HelloWorld
-				<div><Link to="/todo">TODO</Link></div>
-				<div><Link to="/couter">COUTER</Link></div>
-
+				<Navbar color="faded" light expand="md">
+					<NavbarBrand href="/">React</NavbarBrand>
+					<NavbarToggler onClick={this.toggle} />
+					<Collapse isOpen={this.state.isOpen} navbar>
+						<Nav className="mr-auto" navbar>
+							<NavItem>
+								<Link className="nav-link" to="/todo">TODO</Link>
+								{/* <NavLink href="/components/">Components</NavLink> */}
+							</NavItem>
+							<NavItem>
+								{/* <NavLink href="https://github.com/reactstrap/reactstrap">Github</NavLink> */}
+								<Link className="nav-link" to="/couter">COUTER</Link>
+							</NavItem>
+						</Nav>
+					</Collapse>
+				</Navbar>
 				<Route path="/todo" component={Todo}/>
 				<Route path="/couter" component={AsyncCounter}/>
 			</div>
@@ -21,8 +48,8 @@ class componentName extends Component {
 	}
 }
 
-componentName.propTypes = {
+App.propTypes = {
 
 };
 
-export default componentName;
+export default App;

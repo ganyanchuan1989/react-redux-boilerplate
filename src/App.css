@@ -1,9 +1,15 @@
 .app {
     height: 100%;
     width: 100%;
-    background: red;
-    padding: 50px;
+    /* background: red; */
+    /* padding: 50px; */
 }
 .app_main{
     display: flex;
+}
+.abc{
+    background: blue;
+}
+.def{
+    background: red;
 }
