@@ -30,18 +30,17 @@ const config = {
         rules: [
             { test: /\.(js|jsx)$/, use: 'babel-loader', exclude: /node_modules/ },
             {
-								test: /\.css$/i,
+								test: /\.less$/i,
                 use: extractCSS.extract({
 										fallback: 'style-loader',
                     use: [{
                         loader: 'css-loader',
                         options: {
 														modules: true,
-														sourceMap: true,
-														minimize: true,
+														importLoaders: 2,
                             localIdentName: '[name]__[local]--[hash:base64:5]',
                         },
-										}],
+										},	'postcss-loader',"less-loader"],
 									//	publicPath: '/build'
                 }),
             },
