@@ -1,11 +1,11 @@
-import style from  './App.css'
+import './App.less'
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class App extends Component {	
 	render() {
 		return (
-			<div className={style.app}>
+			<div styleName="app">
 				HelloWorlds
 			</div>
 		);

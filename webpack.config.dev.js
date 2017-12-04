@@ -33,10 +33,10 @@ const config = {
     rules: [
       { test: /\.(js|jsx)$/, use: 'babel-loader', exclude: /node_modules/ },
       {
-				test: /\.css$/,
+				test: /\.less$/,
 				use: [
 					'style-loader',
-					{ loader: 'css-loader', options: { modules: true, importLoaders: 1 } },
+					{ loader: 'css-loader', options: { modules: true, importLoaders: 1 ,localIdentName: '[name]__[local]--[hash:base64:5]'} },
 					'postcss-loader'
 				]
 			},
