@@ -11,6 +11,7 @@ class App extends Component {
 					As
 					<div>B</div>
 				</div>
+				<div styleName="hello"></div>
 			</div>
 		);
 	}
