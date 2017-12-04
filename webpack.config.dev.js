@@ -33,19 +33,13 @@ const config = {
     rules: [
       { test: /\.(js|jsx)$/, use: 'babel-loader', exclude: /node_modules/ },
       {
-        test: /\.css$/i,
-        use: [
+				test: /\.css$/,
+				use: [
 					'style-loader',
-					{
-						loader: 'css-loader',
-						options: {
-							modules: true,
-							sourceMap: true,
-							localIdentName: '[name]__[local]--[hash:base64:5]',
-						},
-					},
-				],
-      },
+					{ loader: 'css-loader', options: { modules: true, importLoaders: 1 } },
+					'postcss-loader'
+				]
+			},
       { test: /\.(eot|woff|woff2|svg|ttf|png|jpg|jpeg)$/,
         use: [
           {

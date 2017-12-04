@@ -7,12 +7,17 @@
         "react-hot-loader/babel",
         "syntax-dynamic-import",
         "transform-class-properties",
-        ["react-css-modules",
-            {
-                "webpackHotModuleReloading":true,
-                "generateScopedName":"[name]__[local]--[hash:base64:5]"
-            }
-        ],
+        // ["react-css-modules",
+        //     {
+        //         "webpackHotModuleReloading":true,
+        //         "generateScopedName":"[name]__[local]--[hash:base64:5]",
+        //         "filetypes": {
+        //             ".less": {
+        //               "syntax": "postcss-less-engine"
+        //             }
+        //           }
+        //     }
+        // ],
         "transform-runtime"
     ]
 }

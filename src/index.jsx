@@ -9,18 +9,12 @@ import {
 	Switch,
 } from 'react-router-dom';
 
-import store, { history } from './redux/store';
 import App from './App';
-import { Todo, AsyncCounter } from 'ROUTERS';
 
 const render = (Component) => {
   ReactDOM.render(
 		<AppContainer>
-			<Provider store={store} >
-				<Router history={history}>
-					<Route path="/" component={App}></Route>
-				</Router>
-			</Provider>
+			<Component/>
 		</AppContainer>,
     document.getElementById('app'),
   );
@@ -33,6 +27,3 @@ if (module.hot) {
   module.hot.accept('./App', () => { render(App); });
 }
 
-// store.subscribe(() => {
-// 	render(App);
-// });
