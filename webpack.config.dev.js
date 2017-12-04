@@ -36,8 +36,9 @@ const config = {
 				test: /\.less$/,
 				use: [
 					'style-loader',
-					{ loader: 'css-loader', options: { modules: true, importLoaders: 1 ,localIdentName: '[name]__[local]--[hash:base64:5]'} },
-					'postcss-loader'
+					{ loader: 'css-loader', options: { modules: true, importLoaders: 2 ,localIdentName: '[name]__[local]--[hash:base64:5]'} },
+					'postcss-loader',
+					"less-loader",
 				]
 			},
       { test: /\.(eot|woff|woff2|svg|ttf|png|jpg|jpeg)$/,

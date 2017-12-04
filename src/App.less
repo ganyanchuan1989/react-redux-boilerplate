@@ -4,12 +4,10 @@
      background: red; 
     /* padding: 50px; */
 }
-.app_main{
-    display: flex;
-}
-.abc{
-    background: blue;
-}
-.def{
-    background: red;
+@base: #f938ab;
+
+
+.box {
+  color: saturate(@base, 5%);
+  border-color: lighten(@base, 30%);
 }

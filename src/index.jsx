@@ -9,6 +9,11 @@ import {
 	Switch,
 } from 'react-router-dom';
 
+if (__DEV__) {
+  const { whyDidYouUpdate } = require('why-did-you-update')
+  whyDidYouUpdate(React)
+}
+
 import App from './App';
 
 const render = (Component) => {

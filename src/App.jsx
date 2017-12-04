@@ -7,6 +7,10 @@ class App extends Component {
 		return (
 			<div styleName="app">
 				HelloWorlds
+				<div styleName="box">
+					As
+					<div>B</div>
+				</div>
 			</div>
 		);
 	}
