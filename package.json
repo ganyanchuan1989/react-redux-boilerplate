@@ -4,7 +4,7 @@
     "description": "",
     "scripts": {
         "dev": "cross-env NODE_ENV=development node server.js",
-        "build": "cross-env NODE_ENV=production node_modules\\.bin\\webpack --config webpack.config.prod.js",
+        "build": "cross-env NODE_ENV=production node_modules/.bin/webpack --config webpack.config.prod.js",
         "eslint": "node_modules\\.bin\\eslint ./src/index.jsx --fix",
         "test": "node_modules\\.bin\\webpack"
     },
@@ -26,7 +26,7 @@
         "browser-sync-webpack-plugin": "^1.2.0",
         "clean-webpack-plugin": "^0.1.17",
         "copy-webpack-plugin": "^4.2.3",
-        "cross-env": "^5.1.1",
+        "cross-env": "^5.1.4",
         "css-loader": "^0.28.7",
         "express": "^4.16.2",
         "extract-text-webpack-plugin": "^3.0.2",
